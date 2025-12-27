@@ -40,7 +40,7 @@ import logging
 root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../../'))
 if root_dir not in sys.path:
     sys.path.insert(0, root_dir)
-    
+
 # Define training procedure
 class Separation(sb.Brain):
     def compute_forward(self, mix, targets, stage, noise=None):
@@ -593,7 +593,7 @@ if __name__ == "__main__":
             "savepath": hparams["save_folder"],
             "n_spks": hparams["num_spks"],
             "skip_prep": hparams["skip_prep"],
-            "fs": hparams["sample_rate"],
+            # "fs": hparams["sample_rate"],
         },
     )
 
