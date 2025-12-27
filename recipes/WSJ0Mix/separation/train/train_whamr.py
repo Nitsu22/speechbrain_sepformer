@@ -36,7 +36,11 @@ from tqdm import tqdm
 import csv
 import logging
 
-
+# SpeechBrainのルートディレクトリをパスに追加
+root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../../'))
+if root_dir not in sys.path:
+    sys.path.insert(0, root_dir)
+    
 # Define training procedure
 class Separation(sb.Brain):
     def compute_forward(self, mix, targets, stage, noise=None):
