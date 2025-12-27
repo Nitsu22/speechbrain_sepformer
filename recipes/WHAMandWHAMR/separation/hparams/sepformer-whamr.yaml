@@ -60,7 +60,7 @@ dynamic_mixing: False
 # rir_path variable points to the directory of the room impulse responses
 # e.g. /miniscratch/subakany/rir_wavs
 # If the path does not exist, it is created automatically.
-rir_path: !PLACEHOLDER
+rir_path: /net/midgar/work/nitsu/data/wsj/WHAMR/rir_waves
 
 use_wavedrop: False
 use_speedperturb: False
