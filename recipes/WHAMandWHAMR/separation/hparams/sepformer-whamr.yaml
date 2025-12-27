@@ -15,13 +15,13 @@ __set_seed: !apply:speechbrain.utils.seed_everything [!ref <seed>]
 # the data folder for the wham dataset
 # data_folder needs to follow the format:  /yourpath/whamr.
 # make sure to use the name whamr at your top folder for the dataset!
-data_folder: /yourpath/whamr
+data_folder: /net/midgar/work/nitsu/data/wsj/wham_reverb
 
 # the path for wsj0/si_tr_s/ folder -- only needed if dynamic mixing is used
 # e.g. /yourpath/wsj0-processed/si_tr_s/
 # you need to convert the original wsj0 to 8k
 # you can do this conversion with the script ../meta/preprocess_dynamic_mixing.py
-base_folder_dm: /yourpath/wsj0-processed/si_tr_s/
+base_folder_dm: /net/midgar/work/nitsu/data/wsj/WSJ0Mix/wsj0/si_tr_s/
 
 experiment_name: sepformer-whamr
 output_folder: !ref results/<experiment_name>/<seed>
@@ -63,7 +63,7 @@ dynamic_mixing: False
 rir_path: !PLACEHOLDER
 
 use_wavedrop: False
-use_speedperturb: True
+use_speedperturb: False
 use_rand_shift: False
 min_shift: -8000
 max_shift: 8000
