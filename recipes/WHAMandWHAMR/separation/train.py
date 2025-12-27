@@ -507,7 +507,7 @@ if __name__ == "__main__":
     )
     print("aaaaaaaaaaaaaaaaaa")
     # Update precision to bf16 if the device is CPU and precision is fp16
-    if run_opts.get("device") == "cpu" and hparams.get("precision") == "fp16":
+    if run_opts["device"] == "cpu" and hparams.get("precision") == "fp16":
         hparams["precision"] = "bf16"
         print("bbbbbbbbbbbbbbbbb")
 
