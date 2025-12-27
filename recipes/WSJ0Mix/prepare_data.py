@@ -63,7 +63,7 @@ def create_wsj_csv(datapath, savepath):
         savepath (str) : path where we save the csv file
     """
     for set_type in ["tr", "cv", "tt"]:
-        mix_path = os.path.join(datapath, "wav8k/min/" + set_type + "/mix/")
+        mix_path = os.path.join(datapath, "wav8k/min/" + set_type + "/mix_both_reverb/")
         s1_path = os.path.join(datapath, "wav8k/min/" + set_type + "/s1/")
         s2_path = os.path.join(datapath, "wav8k/min/" + set_type + "/s2/")
 
@@ -118,7 +118,7 @@ def create_wsj_csv_3spks(datapath, savepath):
         savepath (str) : path where we save the csv file
     """
     for set_type in ["tr", "cv", "tt"]:
-        mix_path = os.path.join(datapath, "wav8k/min/" + set_type + "/mix/")
+        mix_path = os.path.join(datapath, "wav8k/min/" + set_type + "/mix_both_reverb/")
         s1_path = os.path.join(datapath, "wav8k/min/" + set_type + "/s1/")
         s2_path = os.path.join(datapath, "wav8k/min/" + set_type + "/s2/")
         s3_path = os.path.join(datapath, "wav8k/min/" + set_type + "/s3/")
