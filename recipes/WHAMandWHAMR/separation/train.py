@@ -461,12 +461,18 @@ def dataio_prep(hparams):
     @sb.utils.data_pipeline.provides("s1_sig")
     def audio_pipeline_s1(s1_wav):
         s1_sig = sb.dataio.dataio.read_audio(s1_wav)
+        # 2chの場合は最初のチャンネルだけを取る
+        if s1_sig.ndim == 2 and s1_sig.shape[1] == 2:
+            s1_sig = s1_sig[:, 0]
         return s1_sig
 
     @sb.utils.data_pipeline.takes("s2_wav")
     @sb.utils.data_pipeline.provides("s2_sig")
     def audio_pipeline_s2(s2_wav):
         s2_sig = sb.dataio.dataio.read_audio(s2_wav)
+        # 2chの場合は最初のチャンネルだけを取る
+        if s2_sig.ndim == 2 and s2_sig.shape[1] == 2:
+            s2_sig = s2_sig[:, 0]
         return s2_sig
 
     @sb.utils.data_pipeline.takes("noise_wav")
