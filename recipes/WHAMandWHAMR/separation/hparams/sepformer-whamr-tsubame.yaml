@@ -15,7 +15,7 @@ __set_seed: !apply:speechbrain.utils.seed_everything [!ref <seed>]
 # the data folder for the wham dataset
 # data_folder needs to follow the format:  /yourpath/whamr.
 # make sure to use the name whamr at your top folder for the dataset!
-data_folder: /net/midgar/work2/nitsu/data/wsj/MyWHAMR/whamr
+data_folder: /gs/bs/tga-shinoda/nitsu/data/whamr
 
 # the path for wsj0/si_tr_s/ folder -- only needed if dynamic mixing is used
 # e.g. /yourpath/wsj0-processed/si_tr_s/
@@ -60,7 +60,7 @@ dynamic_mixing: False
 # rir_path variable points to the directory of the room impulse responses
 # e.g. /miniscratch/subakany/rir_wavs
 # If the path does not exist, it is created automatically.
-rir_path: /net/midgar/work2/nitsu/data/wsj/MyWHAMR/WHAMR1ch/rir_waves
+rir_path: /gs/bs/tga-shinoda/nitsu/data/whamr/rir_waves
 
 use_wavedrop: False
 use_speedperturb: False
