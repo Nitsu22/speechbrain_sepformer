@@ -453,6 +453,8 @@ def dataio_prep(hparams):
     @sb.utils.data_pipeline.provides("mix_sig")
     def audio_pipeline_mix(mix_wav):
         mix_sig = sb.dataio.dataio.read_audio(mix_wav)
+        if mix_sig.ndim == 2 and mix_sig.shape[1] == 2:
+            mix_sig = mix_sig[:, 0]
         return mix_sig
 
     @sb.utils.data_pipeline.takes("s1_wav")
