@@ -1,0 +1,45 @@
+name: sepformer-whamr
+channels:
+  - conda-forge
+
+dependencies:
+  # Python 本体（SpeechBrain / 研究系で無難な 3.9 系に固定）
+  - python=3.9
+  - pip
+
+  # pyroomacoustics(0.7.3) がソースビルドになった場合に備えたビルド系
+  - c-compiler
+  - cxx-compiler
+  - cmake
+  - make
+  - ninja
+  - pkg-config
+
+  # ここから pip で “全部 == 固定”
+  - pip:
+      # SpeechBrain runtime deps（requirements_sepformer.txt に合わせて固定）
+      - torch==2.8.0
+      - torchaudio==2.8.0
+
+      # 古めの pyroomacoustics と衝突しにくい寄りで固定（numpy<2 を選択）
+      - numpy==1.26.4
+      - scipy==1.11.4
+
+      - soundfile==0.13.1
+      - hyperpyyaml==1.2.2
+      - tqdm==4.67.1
+      - joblib==1.5.3
+      - packaging==25.0
+      - huggingface_hub==1.2.3
+      - pandas==2.3.3
+
+      # Recipe-specific
+      - mir-eval==0.6
+      - pyroomacoustics==0.7.3
+
+      # YAML
+      - PyYAML==6.0.3
+
+      # pyroomacoustics ビルドで要求されがちなので明示固定（あなたのログにも出ていた系）
+      - Cython==3.2.3
+      - pybind11==3.0.1
